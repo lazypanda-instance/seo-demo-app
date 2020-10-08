@@ -7,7 +7,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Cherry Champ';
+  title = 'demo-seo';
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     window.addEventListener('orientationchange', this.handleOrientationChange); // Orientation change event
 
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('App_name', 'Cherry Champ');
+      localStorage.setItem('App_name', 'Seo-Demo');
 
       setTimeout(() => {
         console.log('App Name: ', localStorage.getItem('App_name'));
