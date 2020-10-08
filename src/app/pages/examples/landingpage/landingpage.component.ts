@@ -6,7 +6,7 @@ import Chart from "chart.js";
   templateUrl: "landingpage.component.html",
   styleUrls: ['./landingpage.component.css']
 })
-export class LandingpageComponent implements OnInit, OnDestroy {
+export class LandingpageComponent implements OnInit {
   isCollapsed = true;
   constructor() {}
 
