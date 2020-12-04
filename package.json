@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/demo-seo/server/main.js",
     "build": "npm run build:ssr",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +10,9 @@
     "dev:ssr": "ng run demo-seo:serve-ssr",
     "serve:ssr": "node dist/demo-seo/server/main.js",
     "build:ssr": "ng build --prod && ng run demo-seo:server:production",
-    "prerender": "ng run demo-seo:prerender"
+    "list-routes": "node ./scripts/list-routes.js",
+    "prerender": "ng run demo-seo:prerender --routesFile routes.txt",
+    "start": "http-server ./dist/demo-seo/browser"
   },
   "engines": {
     "node": "12.16.1",

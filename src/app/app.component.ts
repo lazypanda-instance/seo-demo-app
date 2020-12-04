@@ -8,6 +8,16 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   title = 'demo-seo';
+  navigation = [
+    {
+      title: 'Home',
+      href: '/home'
+    },
+    {
+      title: 'Country',
+      href: '/country'
+    }
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
 
