@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.3",
-    "@angular-devkit/schematics": "^11.0.3",
+    "@angular-devkit/schematics": "^10.2.0",
     "@angular/language-service": "~9.0.2",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
