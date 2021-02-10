@@ -1,32 +1,26 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'demo-seo';
+  title = 'Tic Tac Toe';
+  isAuthenticated: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {
-
+  constructor(public authService: AuthService) {
+    this.authService.isAuthenticated.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    );
   }
 
-  ngOnInit() {
-    window.addEventListener('orientationchange', this.handleOrientationChange); // Orientation change event
-
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('App_name', 'Seo-Demo');
-
-      setTimeout(() => {
-        console.log('App Name: ', localStorage.getItem('App_name'));
-      }, 2000);
-    }
-
+  async ngOnInit() {
+    this.isAuthenticated = await this.authService.checkAuthenticated();
   }
 
-  handleOrientationChange = (event) => {
-    console.log('Orientation changed: ', event); // Print in console
+  logout() {
+    this.authService.logout('/');
   }
 }
