@@ -28,16 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/css/nucleo-icons.css",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "src/assets/scss/blk-design-system.scss",
-              "src/assets/demo/demo.css"
+              "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
