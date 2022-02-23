@@ -11,7 +11,8 @@
     "serve:ssr": "node dist/demo-seo/server/main.js",
     "build:ssr": "ng build --prod && ng run demo-seo:server:production",
     "list-routes": "node ./scripts/list-routes.js",
-    "prerender": "ng run demo-seo:prerender --routesFile routes.txt",
+    "pwa-prerender-hack": "sed -i -e \"s/serviceWorker: false/serviceWorker: true/g\" ./node_modules/@nguniversal/builders/src/prerender/index.js",
+    "prerender": "npm run pwa-prerender-hack && ng run demo-seo:prerender --routesFile routes.txt",
     "start": "http-server ./dist/demo-seo/browser"
   },
   "engines": {
@@ -32,6 +33,7 @@
     "@angular/platform-browser-dynamic": "^11.0.3",
     "@angular/platform-server": "^11.0.3",
     "@angular/router": "^11.0.3",
+    "@angular/service-worker": "^11.0.3",
     "@nguniversal/builders": "^9.0.2",
     "@nguniversal/express-engine": "^11.0.1",
     "@types/express": "^4.17.0",

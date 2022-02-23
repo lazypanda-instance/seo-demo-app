@@ -8,10 +8,10 @@ export class DemoService {
   constructor(private http: HttpClient) { }
 
   getAllCountry(): Observable<any> {
-    return this.http.get('https://restcountries.eu/rest/v2/all');
+    return this.http.get('https://restcountries.com/v3.1/all');
   }
 
   getCountryDetails(countryName: string): Observable<any> {
-    return this.http.get(`https://restcountries.eu/rest/v2/name/${countryName}`);
+    return this.http.get(`https://restcountries.com/v3.1/name/${countryName}`);
   }
 }

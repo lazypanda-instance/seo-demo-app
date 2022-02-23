@@ -3,7 +3,16 @@
     <h2>Country Details Page</h2>
   </div>
   <div style="background-color: goldenrod;">
-    <div>Details of {{countryName}}:</div>
-    <img src="{{countryDetailsList[0]?.flag}}" width="400" height="250">
+    <div>Details of <b>{{countryName}}</b>:</div>
+    <div class="row" *ngIf="countryDetailsList">
+      <div class="col-md-auto">
+        <img src="{{countryDetailsList[0]?.flags?.svg}}" width="400" height="250" class="p-2">
+      </div>
+      <div class="col-md-6">
+        <p>Common Name: {{ countryDetailsList[0]?.name?.common }}</p>
+        <p>Official Name: {{ countryDetailsList[0]?.name?.official }}</p>
+        <p>Capital: {{ countryDetailsList[0]?.capital[0] }}</p>
+      </div>
+    </div>
   </div>
 </div>
