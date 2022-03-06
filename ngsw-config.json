@@ -11,7 +11,8 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/**/*.html"
         ]
       }
     },
@@ -24,6 +25,28 @@
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "all-country",
+      "urls": ["/v3.1/all"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "10d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "each-country",
+      "urls": ["/v3.1/name/"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "10d",
+        "timeout": "10s"
       }
     }
   ]

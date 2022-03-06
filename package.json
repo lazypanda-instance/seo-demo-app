@@ -11,9 +11,8 @@
     "serve:ssr": "node dist/demo-seo/server/main.js",
     "build:ssr": "ng build --prod && ng run demo-seo:server:production",
     "list-routes": "node ./scripts/list-routes.js",
-    "pwa-prerender-hack": "sed -i -e \"s/serviceWorker: false/serviceWorker: true/g\" ./node_modules/@nguniversal/builders/src/prerender/index.js",
-    "prerender": "npm run pwa-prerender-hack && ng run demo-seo:prerender --routesFile routes.txt",
-    "start": "http-server ./dist/demo-seo/browser"
+    "prerender": "ng run demo-seo:prerender --routesFile routes.txt && ./node_modules/.bin/ngsw-config ./dist/demo-seo/browser ./ngsw-config.json",
+    "start": "http-server -p 4500 -c-1 ./dist/demo-seo/browser"
   },
   "engines": {
     "node": "12.16.1",

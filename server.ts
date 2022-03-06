@@ -9,13 +9,9 @@ import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
 const domino = require('domino');
-
 const fs = require('fs');
-
 const path = require('path');
-
 const template = fs.readFileSync(path.join('.', 'dist/demo-seo/browser', 'index.html')).toString();
-
 const win = domino.createWindow(template);
 
 // tslint:disable-next-line:no-string-literal
@@ -43,25 +39,17 @@ global['navigator'] = win.navigator;
 global['MutationObserver'] = getMockMutationObserver();
 
 function getMockMutationObserver() {
-
   return class {
-
     observe(node, options) {
-
     }
 
     disconnect() {
-
     }
 
     takeRecords() {
-
       return [];
-
     }
-
   };
-
 }
 
 // The Express app is exported so that it can be used by serverless Functions.
